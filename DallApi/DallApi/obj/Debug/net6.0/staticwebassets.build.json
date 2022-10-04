@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "E8JMZCUS4us57gF7wXzIISyIBq58ZuvO4PHRBVVQ7V8=",
+  "Source": "DallApi",
+  "BasePath": "_content/DallApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
