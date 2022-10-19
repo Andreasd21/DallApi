@@ -13,5 +13,6 @@ namespace DallApi.Data
         public DbSet<Painting> Paintings { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<User> DallUsers { get; set; }
+        public DbSet<UserPainting> UserPaintings { get; set; }
     }
 }
