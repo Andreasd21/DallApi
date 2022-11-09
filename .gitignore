@@ -1,0 +1,16 @@
+
+*.cache
+DallApi/DallApi/obj/Debug/net6.0/ref/DallApi.dll
+DallApi/DallApi/obj/Debug/net6.0/DallApi.pdb
+DallApi/DallApi/obj/staticwebassets.pack.sentinel
+DallApi/DallApi/obj/Debug/net6.0/DallApi.MvcApplicationPartsAssemblyInfo.cs
+DallApi/DallApi/obj/Debug/net6.0/DallApi.dll
+*.cache
+DallApi/DallApi/bin/Debug/net6.0/DallApi.pdb
+DallApi/DallApi/bin/Debug/net6.0/DallApi.dll
+DallApi/.vs/ProjectEvaluation/dallapi.projects.v2
+DallApi/.vs/ProjectEvaluation/dallapi.metadata.v2
+DallApi/.vs/DallApi/v17/.suo
+DallApi/.vs/DallApi/FileContentIndex/d3ad4eba-d2b0-45ec-9932-58098ea96ef5.vsidx
+*.vsidx
+DallApi/.vs/ProjectEvaluation/dallapi.metadata.v2

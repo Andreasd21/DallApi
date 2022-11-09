@@ -41,6 +41,20 @@ namespace DallApi.Controllers
 
             return user;
         }
+        // POST: api/Users/Login
+        [HttpPost("Login")]
+        public async Task<ActionResult<ResUser>> Login(LoginUser req)
+        {
+            var user = await _context.DallUsers.FirstOrDefaultAsync(u => u.Email == req.Email && u.Password == req.Password);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+
+            return new ResUser() {Id = user.Id, UserName = user.Name };
+        }
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
