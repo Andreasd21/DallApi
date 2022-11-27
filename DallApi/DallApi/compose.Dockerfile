@@ -1,0 +1,20 @@
+﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["./DallShop BackEnd/DallApi/DallApi/DallApi/DallApi.csproj", "DallApi/"]
+RUN dotnet restore "DallApi/DallApi.csproj"
+COPY . .
+WORKDIR "/src/DallApi"
+RUN dotnet build "DallApi.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "DallApi.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "DallApi.dll"]
