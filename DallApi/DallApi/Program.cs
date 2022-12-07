@@ -1,4 +1,5 @@
 using DallApi.Data;
+using DallApi.Hubs;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,5 +41,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapHub<DallHub>("/signalr");
 app.Run();
 
