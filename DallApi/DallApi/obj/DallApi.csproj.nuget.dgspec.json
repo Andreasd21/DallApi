@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\DallApi.csproj": {}
+    "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\DallApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\DallApi.csproj": {
+    "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\DallApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\DallApi.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\DallApi.csproj",
         "projectName": "DallApi",
-        "projectPath": "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\DallApi.csproj",
+        "projectPath": "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\DallApi.csproj",
         "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\obj\\",
+        "outputPath": "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",

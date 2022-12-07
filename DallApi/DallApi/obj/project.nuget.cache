@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ybhe/gHT04tKbQtA+ACUjrpI2aOUrf3xNFXObvS31imdPNhOH8J+Q2V7J2Tp1VP4ds749OZhSSC8fBuZiDqhEQ==",
+  "dgSpecHash": "kf6y0bq+aRzDl7D43gbbGzpQ8fCl06ksRsPYtw3yWgYzofAsNzApoXw40zq89WAAD9sRliUOqhzyywnl2G7FmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\andre\\Desktop\\Fontys\\Semester 3\\DallShop BackEnd\\DallApi\\DallApi\\DallApi\\DallApi.csproj",
+  "projectFilePath": "C:\\Users\\andre\\Desktop\\DOCKER\\DallApi-main\\DallApi\\DallApi\\DallApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andre\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

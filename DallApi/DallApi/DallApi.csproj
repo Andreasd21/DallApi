@@ -7,6 +7,7 @@
     <UserSecretsId>c91e62d7-95ae-47ec-a09e-c4a6a2d4c1fd</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <LangVersion>preview</LangVersion>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
