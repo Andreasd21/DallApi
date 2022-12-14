@@ -100,6 +100,21 @@ namespace DallApi.Controllers
             return NoContent();
         }
 
+        // GET: api/UserPaintings/GetPainting/5
+        [HttpGet("GetPaintings/{id}")]
+        public async Task<ActionResult<UserPainting[]>> GetPaintings(int id)
+        {
+            var userPainting = await _context.UserPaintings.Where(u => u.UserId == id)
+                         .ToArrayAsync();
+
+            if (userPainting == null)
+            {
+                return NotFound();
+            }
+
+            return userPainting;
+        }
+
         private bool UserPaintingExists(int id)
         {
             return _context.UserPaintings.Any(e => e.Id == id);
