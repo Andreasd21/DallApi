@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "e525e1d1-b529-4b73-9d77-47805edd5a00",
+		"name": "DockerDall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18481463"
+	},
+	"item": [
+		{
+			"name": "GetPaintingsStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Get all painting status', ()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/api/Paintings",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"Paintings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
