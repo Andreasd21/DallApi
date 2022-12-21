@@ -1,0 +1,21 @@
+
+name: newman
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: alphine:latest
+    steps:
+    - name: "Run Docker image api"
+      run: "echo 'hello world'"
+    # - uses: actions/checkout@master
+    # - uses: matt-ball/newman-action@master
+    #   with:
+    #     collection: DockerDall.postman_collection.json
