@@ -3,16 +3,9 @@ pipeline {
   stages {
     stage('Setup') {
       steps {
-        git 'https://github.com/Andreasd21/DallFrontEnd.git'
-        git 'https://github.com/Andreasd21/DallWarehouse.git'
-      }
-    }
-
-    stage('Check setup') {
-      steps {
-        sh '''echo ls
-ls
-'''
+        sh '''git clone \'https://github.com/Andreasd21/DallApi.git\'
+git clone \'https://github.com/Andreasd21/DallWarehouse.git\'
+git clone \'https://github.com/Andreasd21/DallFrontEnd.git\''''
       }
     }
 
