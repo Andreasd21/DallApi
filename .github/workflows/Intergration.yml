@@ -24,7 +24,7 @@ jobs:
       run: |
         ls
         docker build -t my-image .
-        docker run --rm -it my-image
+        docker run -t -p 80:80 my-image
         docker ps 
     # - uses: actions/checkout@master
     # - uses: matt-ball/newman-action@master
