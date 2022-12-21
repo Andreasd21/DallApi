@@ -1,5 +1,5 @@
 
-name: newman
+name: Intergra
 
 on:
   push:
@@ -11,16 +11,17 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    - name: Login to DockerHub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }} #!!
-        password: ${{ secrets.DOCKERHUB_TOKEN }} #!!
 
-    container: alphine:latest
     steps:
     - name: "Run Docker image api"
-      run: "echo 'hello world'"
+      uses: actions/checkout@v2
+    - name: Set up Docker
+      uses: actions/setup-docker@v2
+    - name: Build and push Docker image
+      run: |
+        docker build -t my-image .
+        docker run --rm -it my-image
+        docker ps 
     # - uses: actions/checkout@master
     # - uses: matt-ball/newman-action@master
     #   with:
