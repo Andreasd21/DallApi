@@ -13,19 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "Run Docker image api"
+    - name: "Checkout repo"
       uses: actions/checkout@v2
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
+    - name: build and run sql server
+      working-directory: ./
+      run: |
+        docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest --name database
     - name: Build and run Docker image
       working-directory: ./DallApi/DallApi
       run: |
         ls
         docker build -t my-image .
-        docker run -t -p 80:80 my-image
+        docker run -d -p 80:80 --name api my-image
         docker ps 
+
     # - uses: actions/checkout@master
     # - uses: matt-ball/newman-action@master
     #   with:
