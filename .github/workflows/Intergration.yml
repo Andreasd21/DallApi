@@ -28,8 +28,11 @@ jobs:
       run: |
         ls
         docker build -t my-image .
-        docker run -d -p 80:80 --name api my-image
-        docker ps 
+        docker run -d -p 80:80 -e DATABASE_CONECTION="Test123" --name api my-image
+    - name: database update
+      working-directory: ./DallApi/DallApi
+      run: |
+        dotnet ef database update
 
     # - uses: actions/checkout@master
     # - uses: matt-ball/newman-action@master
