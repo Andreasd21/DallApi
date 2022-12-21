@@ -20,9 +20,8 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Build and run Docker image
+      working-directory: ./DallApi/DallApi
       run: |
-        ls
-        CD DallApi
         ls
         docker build -t my-image .
         docker run --rm -it my-image
