@@ -16,8 +16,8 @@ jobs:
     - name: "Run Docker image api"
       uses: actions/checkout@v2
     - name: Set up Docker
-      uses: actions/setup-docker@v2
-    - name: Build and push Docker image
+      uses: actions/setup-docker@v1
+    - name: Build and run Docker image
       run: |
         docker build -t my-image .
         docker run --rm -it my-image
