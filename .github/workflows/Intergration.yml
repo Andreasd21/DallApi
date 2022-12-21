@@ -22,6 +22,8 @@ jobs:
     - name: Build and run Docker image
       run: |
         ls
+        CD DallApi
+        ls
         docker build -t my-image .
         docker run --rm -it my-image
         docker ps 
