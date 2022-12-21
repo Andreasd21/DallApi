@@ -1,5 +1,5 @@
 
-name: Intergra
+name: Intergration
 
 on:
   push:
@@ -28,10 +28,11 @@ jobs:
       run: |
         ls
         docker build -t my-image .
-        docker run -d -p 80:80 -e DATABASE_CONECTION="Test123" --name api my-image
+        docker run -d -p 80:80 -e DATABASE_CONECTION="server=127.0.0.1,1433;Database=Master;User Id=SA;Password=Test123" --name api my-image
     - name: database update
       working-directory: ./DallApi/DallApi
       run: |
+        docker exec api env
         dotnet ef database update
 
     # - uses: actions/checkout@master
