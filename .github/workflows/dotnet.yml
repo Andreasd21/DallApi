@@ -29,9 +29,3 @@ jobs:
     - name: Test
       working-directory: './DallApi'
       run: dotnet test --no-build --verbosity normal
-
-    steps:
-    - uses: actions/checkout@master
-    - uses: matt-ball/newman-action@master
-      with:
-        collection: DockerDall.postman_collection.json
