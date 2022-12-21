@@ -15,8 +15,10 @@ jobs:
     steps:
     - name: "Run Docker image api"
       uses: actions/checkout@v2
-    - name: Set up Docker
-      uses: actions/setup-docker@v1
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
     - name: Build and run Docker image
       run: |
         docker build -t my-image .
