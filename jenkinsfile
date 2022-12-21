@@ -1,0 +1,32 @@
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup'){
+            steps{
+                git clone 'https://github.com/Andreasd21/DallApi.git'
+                git clone 'https://github.com/Andreasd21/DallWarehouse.git'
+                git clone 'https://github.com/Andreasd21/DallFrontEnd.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                echo ls
+                ls
+                cmd 'DallApi'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
