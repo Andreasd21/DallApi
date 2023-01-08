@@ -41,8 +41,8 @@ jobs:
         docker exec api env
         docker container ls
         docker network create -d bridge my-bridge-network
-        docker connect my-bridge-network api
-        docker connect my-bridge-network --ip 172.1.0.1 database
+        docker network connect my-bridge-network api
+        docker network connect my-bridge-network --ip 172.1.0.1 database
         docker network inspect my-bridge-network
 
 
