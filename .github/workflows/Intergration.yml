@@ -27,9 +27,8 @@ jobs:
     - name: build and run sql server
       working-directory: ./
       run: |
-        docker pull --name database neskred/dalle:database_empty 
-        docker images
-        docker run -p 1433:1433 -d database
+        docker 
+        docker run -p 1433:1433 -d neskred/dalle:database_empty
     - name: Build and run Docker image
       working-directory: ./DallApi/DallApi
       run: |
@@ -42,7 +41,9 @@ jobs:
         dotnet tool install --global dotnet-ef
         docker exec api env
         docker container ls
+        dotnet ef database update
 
+    - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
       with:
         collection: DockerDall.postman_collection.json
