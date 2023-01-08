@@ -40,6 +40,14 @@ jobs:
       run: |
         docker exec api env
         docker container ls
+        
+
+    - name: Dump redis logs
+      uses: jwalton/gh-docker-logs@v2
+      with:
+        images: 'my-image'
+        # Only show last 100 lines of each
+        tail: '100'
 
     - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
