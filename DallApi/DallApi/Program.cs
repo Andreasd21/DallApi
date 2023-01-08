@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+string dbPassword = Environment.GetEnvironmentVariable("DATABASE_CONECTION");
 // Add services to the container.
 builder.Services.AddSignalR(options =>
 {
@@ -15,9 +16,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    if(Environment.GetEnvironmentVariable("DATABASE_CONECTION") != null)
+    if(dbPassword != null)
     {
-        options.UseSqlServer(builder.Configuration.GetConnectionString(Environment.GetEnvironmentVariable("DATABASE_CONECTION")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString(dbPassword);
     }else
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
