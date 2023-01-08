@@ -27,9 +27,9 @@ jobs:
     - name: build and run sql server
       working-directory: ./
       run: |
-        docker pull neskred/dalle:database_empty
+        docker pull --name database neskred/dalle:database_empty 
         docker images
-        docker run -p 1433:1433 -d neskred.dalle:database_empty 
+        docker run -p 1433:1433 -d database
     - name: Build and run Docker image
       working-directory: ./DallApi/DallApi
       run: |
