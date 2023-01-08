@@ -34,6 +34,7 @@ jobs:
       run: |
         dotnet tool install --global dotnet-ef
         docker exec api env
+        docker container ls
         dotnet ef database update
 
     # - uses: actions/checkout@master
