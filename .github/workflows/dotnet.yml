@@ -46,6 +46,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: './DallApi'
           file: './Dockerfile'
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/dalle:front-end
