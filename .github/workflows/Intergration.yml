@@ -44,5 +44,4 @@ jobs:
     - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
       with:
-        working-directory: ./
-        collection: DockerDall.postman_collection(1).json
+        collection: ./DockerDall.postman_collection(1).json
