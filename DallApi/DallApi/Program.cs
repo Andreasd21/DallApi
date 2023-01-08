@@ -18,11 +18,12 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     if(dbPassword != null)
     {
-        options.UseSqlServer(builder.Configuration.GetConnectionString(dbPassword));
+        options.UseSqlServer(dbPassword);
     }else
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
     }
+    
 });
 builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
         builder =>
