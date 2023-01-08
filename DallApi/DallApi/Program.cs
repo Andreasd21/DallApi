@@ -18,7 +18,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     if(dbPassword != null)
     {
-        options.UseSqlServer(builder.Configuration.GetConnectionString(dbPassword);
+        options.UseSqlServer(builder.Configuration.GetConnectionString(dbPassword));
     }else
     {
         options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));

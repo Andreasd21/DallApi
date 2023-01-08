@@ -5,7 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-ENV DATABASE_CONECTION="Server=mssqlstud.fhict.local;Database=dbi492404_dall;User Id=dbi492404_dall2;Password=dall123;"
+ENV DATABASE_CONECTION="Server=mssqlstud.fhict.local;Database=dbi492404_dall;User Id=dbi492404_dall;Password=dall123;"
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
