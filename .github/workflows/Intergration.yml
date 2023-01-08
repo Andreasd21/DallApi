@@ -38,12 +38,10 @@ jobs:
     - name: database update
       working-directory: ./DallApi/DallApi
       run: |
-        dotnet tool install --global dotnet-ef
         docker exec api env
         docker container ls
-        dotnet ef database update
 
     - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
       with:
-        collection: DockerDall.postman_collection.json
+        collection: DockerDall.postman_collection(1).json
