@@ -22,16 +22,17 @@ jobs:
     - name: build and run sql server
       working-directory: ./
       run: |
-        docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test123" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest --name database
+        docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Test1234" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest --name database
     - name: Build and run Docker image
       working-directory: ./DallApi/DallApi
       run: |
         ls
         docker build -t my-image .
-        docker run -d -p 80:80 -e DATABASE_CONECTION="server=127.0.0.1,1433;Database=Master;User Id=SA;Password=Test123" --name api my-image
+        docker run -d -p 80:80 -e DATABASE_CONECTION="server=127.0.0.1,1433;Database=Master;User Id=SA;Password=Test1234" --name api my-image
     - name: database update
       working-directory: ./DallApi/DallApi
       run: |
+        dotnet tool install --global dotnet-ef
         docker exec api env
         dotnet ef database update
 

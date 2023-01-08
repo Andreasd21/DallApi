@@ -15,7 +15,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString(Environment.GetEnvironmentVariable("DATABASE_CONECTION")));
+    if(Environment.GetEnvironmentVariable("DATABASE_CONECTION") != null)
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString(Environment.GetEnvironmentVariable("DATABASE_CONECTION")));
+    }else
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+    }
 });
 builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
         builder =>
