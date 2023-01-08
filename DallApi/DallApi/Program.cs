@@ -16,13 +16,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    if(dbPassword != null)
+     if(dbPassword != null)
     {
-        options.UseSqlServer(dbPassword);
+    options.UseSqlServer(dbPassword);
     }else
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-    }
+     {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+     }
+
     
 });
 builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
