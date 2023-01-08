@@ -25,11 +25,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8082/api/Paintings",
+					"raw": "localhost:80/api/Paintings",
 					"host": [
 						"localhost"
 					],
-					"port": "8082",
+					"port": "80",
 					"path": [
 						"api",
 						"Paintings"
