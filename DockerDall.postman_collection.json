@@ -7,38 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "GetPaintingsStatus",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test('Get all painting status', ()=>{\r",
-							"    pm.response.to.have.status(200)\r",
-							"})"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:80/api/Paintings",
-					"host": [
-						"localhost"
-					],
-					"port": "80",
-					"path": [
-						"api",
-						"Paintings"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Post Painting",
 			"event": [
 				{
@@ -65,6 +33,38 @@
 						}
 					}
 				},
+				"url": {
+					"raw": "localhost:80/api/Paintings",
+					"host": [
+						"localhost"
+					],
+					"port": "80",
+					"path": [
+						"api",
+						"Paintings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPaintingsStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Get all painting status', ()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
 				"url": {
 					"raw": "localhost:80/api/Paintings",
 					"host": [
