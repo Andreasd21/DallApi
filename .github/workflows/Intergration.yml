@@ -28,19 +28,22 @@ jobs:
       working-directory: ./
       run: |
         docker 
-        docker run -p 1433:1433 -d neskred/dalle:database_empty
+        docker run -p 1433:1433 -d --name database neskred/dalle:database_empty
     - name: Build and run Docker image
       working-directory: ./DallApi/DallApi
       run: |
         ls
         docker build -t my-image .
-        docker run -d -p 80:80 -e DATABASE_CONECTION="Server=localhost,1433;Database=master;User Id=sa;Password=Test1234;" --name api my-image
-    - name: database update
+        docker run -d -p 80:80 -e DATABASE_CONECTION="Server=172.1.0.1,1433;Database=master;User Id=sa;Password=Test1234;" --name api my-image
+    - name: network create
       working-directory: ./DallApi/DallApi
       run: |
         docker exec api env
         docker container ls
-        
+        docker network create -d bridge my-bridge-network
+        docker connect my-bridge-network api
+        docker connect my-bridge-network --ip 172.1.0.1 database
+        docker network inspect my-bridge-network
 
 
 
