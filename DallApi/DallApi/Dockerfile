@@ -5,7 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-ENV DATABASE_CONECTION="Server=127.0.0.1,1433;Database=master;User Id=sa;Password=Test1234;"
+ENV DATABASE_CONECTION="Server=192.168.0.3,1433;Database=master;User Id=sa;Password=Test1234;"
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src

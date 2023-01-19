@@ -1,7 +1,6 @@
 using DallApi.Data;
 using DallApi.Hubs;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 string dbPassword = Environment.GetEnvironmentVariable("DATABASE_CONECTION");
@@ -30,9 +29,9 @@ builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
         builder =>
         {
             builder.AllowAnyHeader()
-                   .AllowAnyMethod()
-                   .SetIsOriginAllowed((host) => true)
-                   .AllowCredentials();
+                    .AllowAnyMethod()
+                    .SetIsOriginAllowed((host) => true)
+                    .AllowCredentials();
         }));
 
 var app = builder.Build();
